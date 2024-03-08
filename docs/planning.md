@@ -16,7 +16,8 @@ DevDojo es una plataforma de aprendizaje en línea diseñada para proporcionar u
 1. Estudiantes:
     - Visualizar el catálogo de cursos disponible.
     - Busqueda de cursos por nombre y/o lenguaje de programación.
-    - Inscribirse a cursos
+    - Inscribirse a cursos.
+    - Visualizar el catálogo de cursos en los que se ha inscrito.
     - Comprar cursos.
 
 2. Administradores:
