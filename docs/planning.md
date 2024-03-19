@@ -38,3 +38,10 @@ https://trello.com/b/rcs4vJBe/tablero-devdojo
 ```
 npm install
 ```
+
+## Instalaciones realizadas en el backend:
+Proyecto de Spring creado con Maven, se han añadido las siguientes dependencias: 
+
+```
+Spring Web, H2 Database, Spring Boot Dev Tools, Spring Data JPA
+```
