@@ -28,3 +28,13 @@ DevDojo es una plataforma de aprendizaje en línea diseñada para proporcionar u
 ## Link Figma:
 
 https://www.figma.com/file/NS2PoE2mZkWhvzrKAGo9WC/DevDojo?type=design&node-id=0%3A1&mode=design&t=LMnf0DT4dOLaJvXG-1
+
+## Link Trello:
+
+https://trello.com/b/rcs4vJBe/tablero-devdojo
+
+## Instalaciones realizadas en el frontend:
+
+```
+npm install
+```
