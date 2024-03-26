@@ -1,5 +1,6 @@
 header{
     background: linear-gradient(90deg, var(--darkblue) 0%, var(--blue) 10%, var(--lightblue) 100%);
+
 }
 
 nav{
@@ -57,7 +58,7 @@ nav .search_box input{
     height: 100%;
     padding: 0 1rem;
     font-size: 2rem;
-    width: 35rem;
+    width: 50rem;
     border-radius: 0 1rem 1rem 0;
 }
 
@@ -144,6 +145,7 @@ input[type="checkbox"]{
         height: 0;
         visibility: hidden;
         transition: 0.3s ease-in-out;
+        padding: 1rem;
     }
     
     nav ol li{

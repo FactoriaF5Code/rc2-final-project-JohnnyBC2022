@@ -1,5 +1,6 @@
 import './App.css'
 import {Header} from "./presentation/components/Header/Header"
+import { SubMenu } from './presentation/components/SubMenu/SubMenu'
 
 function App() {
   
@@ -7,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <h1>hola</h1>
+      <SubMenu />
     </>
   )
 }
