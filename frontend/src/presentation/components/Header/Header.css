@@ -1,0 +1,209 @@
+header{
+    background: linear-gradient(90deg, var(--darkblue) 0%, var(--blue) 10%, var(--lightblue) 100%);
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1.5rem 3rem;
+}
+
+nav .icon{
+    width: 9rem;
+    cursor: pointer;
+}
+
+.logo{
+    width: 100%;
+}
+
+nav ol{
+    display: flex;
+    margin: auto 0;
+}
+
+nav ol li{
+    margin: 0 0.2rem;
+}
+
+nav ol li a{
+    color: var(--white);
+    margin: 0 0.2rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem 1rem;
+}
+
+nav ol li:hover a{
+    background: var(--btnpink);
+    border-radius: 1rem;
+}
+
+nav .search_box{
+    display: flex;
+    margin: auto 0;
+    height: 3.5rem;
+    line-height: 3.5rem;
+}
+
+nav .search_box input{
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    height: 100%;
+    padding: 0 1rem;
+    font-size: 2rem;
+    width: 35rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
+nav .search_box span{
+    color: var(--blue);
+    font-size: 2rem;
+    background-color: var(--orange);
+    height: 100%;
+    padding: 0 0.8rem;
+    border-radius: 1rem 0 0 1rem;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+nav .search_box span:hover{
+    color: var(--white);
+    border-radius: 1rem 0 0 1rem;
+}
+
+nav .search_box span::after{
+    height: 100%;
+    width: 0%;
+    content: '';
+    background-color: var(--btnpink);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    border-radius: 1rem 0 0 1rem;
+}
+
+nav .search_box span:hover::after{
+    border-radius: 1rem 0 0 1rem;
+    width: 100%;
+}
+
+nav .bar{
+    position: relative;
+    margin: auto;
+    display: none;
+}
+
+nav .bar span{
+    color: var(--white);
+    position: absolute;
+    font-size: 3.5rem;
+}
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    display: none;
+}
+
+@media screen and (max-width:1250px){
+    nav {
+        display: block;
+        padding: 0;
+    }
+    nav .logo{
+        width: 300%;
+    }
+    nav .icon{
+        display: inline-block;
+        padding: 1.5rem 3rem;
+    }
+
+    nav .search_box{
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    nav .search_box input{
+        width: 90%;
+    }
+
+    nav ol{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white);
+        height: 0;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+    
+    nav ol li{
+        text-align: center;
+        transition: 0.3s 0.1s all;
+        opacity: 0;
+    }
+
+    nav ol li a{
+        color: var(--darkblue);
+        font-size: 2.8rem;
+        padding: 2.5rem;
+        display: block;
+    }
+
+    nav ol li:nth-child(1){
+        transform: translateX(-15rem);
+    }
+    nav ol li:nth-child(2){
+        transform: translateX(-20rem);
+    }
+
+    nav .bar{
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 8rem;
+        cursor: pointer;
+    }
+
+    nav .bar #times{
+        display: none;
+    }
+
+    #check:checked ~ nav .bar #times{
+        display: block;
+    }
+    #check:checked ~ nav .bar #bars{
+        display: none;
+    }
+
+    #check:checked ~ nav ol{
+        visibility: visible;
+        height: 20rem;
+    }
+
+    #check:checked ~ nav ol li:nth-child(1),
+    #check:checked ~ nav ol li:nth-child(2){
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.section__header{
+    background: url(../../assets/images/DevDojoBG.jpg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    z-index: -1;
+    filter: opacity(10%);
+}
