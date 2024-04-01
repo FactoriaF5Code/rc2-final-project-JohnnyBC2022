@@ -199,7 +199,7 @@ input[type="checkbox"]{
     }
 }
 
-.section__header{
+/* .section__header{
     background: url(../../assets/images/DevDojoBG.jpg);
     height: 100%;
     width: 100%;
@@ -208,4 +208,4 @@ input[type="checkbox"]{
     top: 0;
     z-index: -1;
     filter: opacity(10%);
-}
+} */
