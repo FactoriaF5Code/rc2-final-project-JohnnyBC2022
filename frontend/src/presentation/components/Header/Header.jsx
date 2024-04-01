@@ -22,7 +22,7 @@ export const Header = () => {
           <span>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </span>
-          <input type="search" placeholder="Search here..." />
+          <input type="search" placeholder="Buscar..." />
         </div>
         <ol>
           <li>
