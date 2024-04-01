@@ -1,0 +1,43 @@
+.card_container{
+    background-color: var(--orange);
+    width: 36rem;
+    height: 30rem;
+    text-align: center;
+    border-radius: 1rem;
+    border: solid 0.3rem var(--darkblue);
+    box-shadow: 0 4px 4px var(--darkblue);
+}
+
+.card_container img{
+    width: 100%;
+    height: 7.5rem;
+}
+
+.card_container h3{
+    color: var(--darkblue);
+    font-size: 1.8rem;
+    margin: 1.5rem;
+}
+
+.card_container p{
+    color: var(--blue);
+    font-size: 1.6rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card_container button{
+    margin: 2rem;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    border: solid 0.3rem var(--darkblue);
+    background: linear-gradient(180deg, var(--btnpinktop) 0%, var(--btnpink) 50%);
+    color: var(--white);
+    transition: 0.3s ease-in-out;
+}
+
+.card_container button:hover{
+    background: var(--btnpinktop);
+    font-weight: bold;
+    transform: scale(1.1);
+}
