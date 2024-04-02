@@ -1,9 +1,16 @@
 import "./App.css";
+import { Cards } from "./presentation/components/Cards/Cards";
+import { Footer } from "./presentation/components/Footer/Footer";
+import { Header } from "./presentation/components/Header/Header";
+import { SubMenu } from "./presentation/components/SubMenu/SubMenu";
 
 function App() {
   return (
     <>
-      <h1>Hooola</h1>
+      <Header />
+      <SubMenu />
+      <Cards />
+      <Footer />
     </>
   );
 }

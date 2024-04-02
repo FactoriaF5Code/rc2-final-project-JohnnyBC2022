@@ -1,0 +1,22 @@
+footer{
+    background: linear-gradient(90deg, var(--darkblue) 0%, var(--blue) 90%, var(--lightblue) 100%);
+    color: var(--white);
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+.footer_icons{
+    display: flex;
+    gap: 2rem;
+}
+
+.footer_icons a:visited{
+    color: var(--white);
+}
+
+.footer_icons a:hover{
+    font-size: 2.8rem;
+    transition: 0.3s ease-in-out;
+}
