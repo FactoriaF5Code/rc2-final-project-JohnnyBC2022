@@ -14,6 +14,11 @@
 
 .submenu span{
     position: absolute;
+    padding-left: 1.8rem;
+}
+
+.submenu h2{
+    font-family: var(--titlefont);
 }
 
 .submenu span:nth-child(1){

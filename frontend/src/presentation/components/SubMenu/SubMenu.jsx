@@ -5,7 +5,7 @@ export const SubMenu = () => {
     <section className="submenu">
       <h1>
         Adéntrate en el mundo  <span>DevDojo</span>
-        <span>DevDojo</span>!
+        <span>DevDojo</span>
       </h1>
       <h2>
         Un espacio donde aprender a programar se convierte en una emocionante
