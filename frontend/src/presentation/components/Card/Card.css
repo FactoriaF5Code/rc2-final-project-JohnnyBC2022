@@ -19,7 +19,7 @@
 
 .card_container h3 {
   color: var(--darkblue);
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   margin: 1.5rem;
 }
 
@@ -46,5 +46,9 @@
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 1250px) {
+.card_container .price{
+  padding: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--darkblue);
 }
