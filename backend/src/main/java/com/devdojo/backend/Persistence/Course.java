@@ -1,4 +1,4 @@
-package com.devdojo.backend.Models.Courses;
+package com.devdojo.backend.Persistence;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
