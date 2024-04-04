@@ -10,7 +10,7 @@ import java.util.UUID;
 @Table(name = "Courses")
 public class Course {
     @Id
-    private UUID id;
+    private UUID courseId;
     private String imageUrl;
     private  String courseName;
     private  String description;
@@ -19,7 +19,7 @@ public class Course {
     public  Course(){
     }
     public  Course(String imageUrl, String courseName, String description, Double price){
-        this.id = UUID.randomUUID();
+        this.courseId = UUID.randomUUID();
         this.imageUrl = imageUrl;
         this.courseName = courseName;
         this.description = description;
@@ -27,12 +27,12 @@ public class Course {
     }
 
 
-    public UUID getId() {
-        return id;
+    public UUID getCourseId() {
+        return courseId;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setCourseId(UUID id) {
+        this.courseId = id;
     }
 
     public String getImageUrl() {
