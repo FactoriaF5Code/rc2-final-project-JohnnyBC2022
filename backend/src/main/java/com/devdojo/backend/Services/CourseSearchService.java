@@ -24,4 +24,9 @@ public class CourseSearchService {
     public  boolean courseExists(String courseId) {
         return  repository.existsById(UUID.fromString(courseId));
     }
+
+    public List<Course> getAllCourses() {
+        return repository.findAll();
+    }
+
 }

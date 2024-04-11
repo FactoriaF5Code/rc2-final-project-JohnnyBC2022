@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -31,6 +32,13 @@ public class CourseController {
         return new CourseSearchResponse(courseResults);
     }
 
+    @GetMapping("/all")
+    public List<CourseResponse> getAllCourses() {
+        return courseRepository.findAll().stream()
+                .map(this::responseFromCourse)
+                .collect(Collectors.toList());
+    }
+
     private CourseResponse responseFromCourse(Course course) {
        return new CourseResponse(
                course.getCourseId().toString(),
@@ -39,6 +47,8 @@ public class CourseController {
                course.getDescription(),
                course.getPrice()
        );
+
+
     }
 
     @PostMapping

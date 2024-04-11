@@ -29,33 +29,30 @@ public class CourseApiIntegrationTest {
     void setup() {
         courseRepository.deleteAll();
     }
-
     @Test
-    void testGetAllCourses() throws Exception {
-
+    void GetAllCoursesTest() throws Exception {
         courseRepository.saveAll(List.of(
                 new Course("url1", "Curso 1", "Descripción del curso 1", 10.0),
                 new Course("url2", "Curso 2", "Descripción del curso 2", 20.0),
                 new Course("url3", "Curso 3", "Descripción del curso 3", 30.0)
         ));
 
-
-        mockMvc.perform(get("/api/courses"))
+        mockMvc.perform(get("/api/courses/all"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.results").isArray())
-                .andExpect(jsonPath("$.results").isNotEmpty())
-                .andExpect(jsonPath("$.results.length()").value(3))
-                .andExpect(jsonPath("$.results[0].imageUrl").value("url1"))
-                .andExpect(jsonPath("$.results[0].courseName").value("Curso 1"))
-                .andExpect(jsonPath("$.results[0].description").value("Descripción del curso 1"))
-                .andExpect(jsonPath("$.results[0].price").value(10.0))
-                .andExpect(jsonPath("$.results[1].imageUrl").value("url2"))
-                .andExpect(jsonPath("$.results[1].courseName").value("Curso 2"))
-                .andExpect(jsonPath("$.results[1].description").value("Descripción del curso 2"))
-                .andExpect(jsonPath("$.results[1].price").value(20.0))
-                .andExpect(jsonPath("$.results[2].imageUrl").value("url3"))
-                .andExpect(jsonPath("$.results[2].courseName").value("Curso 3"))
-                .andExpect(jsonPath("$.results[2].description").value("Descripción del curso 3"))
-                .andExpect(jsonPath("$.results[2].price").value(30.0));
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$.length()").value(3))
+                .andExpect(jsonPath("$[0].imageUrl").value("url1"))
+                .andExpect(jsonPath("$[0].courseName").value("Curso 1"))
+                .andExpect(jsonPath("$[0].description").value("Descripción del curso 1"))
+                .andExpect(jsonPath("$[0].price").value(10.0))
+                .andExpect(jsonPath("$[1].imageUrl").value("url2"))
+                .andExpect(jsonPath("$[1].courseName").value("Curso 2"))
+                .andExpect(jsonPath("$[1].description").value("Descripción del curso 2"))
+                .andExpect(jsonPath("$[1].price").value(20.0))
+                .andExpect(jsonPath("$[2].imageUrl").value("url3"))
+                .andExpect(jsonPath("$[2].courseName").value("Curso 3"))
+                .andExpect(jsonPath("$[2].description").value("Descripción del curso 3"))
+                .andExpect(jsonPath("$[2].price").value(30.0));
     }
+
 }
