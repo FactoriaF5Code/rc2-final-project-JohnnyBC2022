@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/*@Service
+@Service
 public class CourseSearchService {
     private CourseRepository repository;
 
@@ -23,22 +23,5 @@ public class CourseSearchService {
 
     public  boolean courseExists(String courseId) {
         return  repository.existsById(UUID.fromString(courseId));
-    }
-}*/
-@Service
-public class CourseSearchService {
-
-    public List<Course> searchCourses(String query) {
-        // Simulando datos de prueba
-        List<Course> courses = new ArrayList<>();
-        courses.add(new Course("url1", "Curso 1", "Descripción del curso 1", 10.0));
-        courses.add(new Course("url2", "Curso 2", "Descripción del curso 2", 20.0));
-        courses.add(new Course("url3", "Curso 3", "Descripción del curso 3", 30.0));
-        return courses;
-    }
-
-    public boolean courseExists(String courseId) {
-        // Simplemente devuelve true para simular que el curso existe
-        return true;
     }
 }
