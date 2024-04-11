@@ -4,11 +4,10 @@ import com.devdojo.backend.Persistence.Course;
 import com.devdojo.backend.Persistence.CourseRepository;
 import com.devdojo.backend.Services.CourseSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
@@ -16,12 +15,15 @@ import java.util.stream.Collectors;
 public class CourseController {
     private CourseSearchService courseSearch;
     private CourseRepository courseRepository;
-   public  CourseController(@Autowired CourseSearchService courseSearchService){
-       this.courseSearch = courseSearchService;
-   }
+
+    public CourseController(@Autowired CourseSearchService courseSearchService,
+                            @Autowired CourseRepository courseRepository) {
+        this.courseSearch = courseSearchService;
+        this.courseRepository = courseRepository;
+    }
 
    @GetMapping
-    public CourseSearchResponse searchCourse(@RequestParam(name = "q", required = true) String query){
+    public CourseSearchResponse searchCourse(@RequestParam(name = "q", required = false) String query){
         var courseResults = courseSearch.searchCourses(query)
                 .stream()
                 .map(this::responseFromCourse)
@@ -37,5 +39,12 @@ public class CourseController {
                course.getDescription(),
                course.getPrice()
        );
+    }
+
+    @PostMapping
+    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
+        course.setCourseId(UUID.randomUUID());
+        Course savedCourse = courseRepository.save(course);
+        return ResponseEntity.ok(savedCourse);
     }
 }

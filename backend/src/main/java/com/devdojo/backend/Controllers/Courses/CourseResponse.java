@@ -9,7 +9,7 @@ public class CourseResponse {
     private  String description;
     private  Double price;
 
-    CourseResponse(String id,String imageUrl, String courseName, String description, Double price){
+    CourseResponse(String id, String imageUrl, String courseName, String description, Double price){
         this.id = id;
         this.imageUrl = imageUrl;
         this.courseName =courseName;

@@ -16,9 +16,10 @@ public class Course {
     private  String description;
     private  Double price;
 
-    public  Course(){
+    public Course(){
     }
-    public  Course(String imageUrl, String courseName, String description, Double price){
+
+    public Course(String imageUrl, String courseName, String description, Double price){
         this.courseId = UUID.randomUUID();
         this.imageUrl = imageUrl;
         this.courseName = courseName;

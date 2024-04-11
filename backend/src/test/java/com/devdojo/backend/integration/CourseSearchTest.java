@@ -42,7 +42,7 @@ class CourseSearchTest {
                         12.95)
         ));
 
-        api.perform(get("/api/books?q=Mano"))
+        api.perform(get("/api/courses?q=CSS"))
                 .andExpectAll(
                         status().isOk(),
                         jsonPath("$.results", hasSize(1)),
