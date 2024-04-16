@@ -1,19 +1,14 @@
+import React from "react";
+
+import {CourseSearcher} from "../Searcher/CourseSearcher"
 import "./Header.css";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMagnifyingGlass,
   faBars,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-    onSearch(event.target.value);
-  };
   return (
     <header>
       <input type="checkbox" id="check" />
@@ -25,17 +20,7 @@ export const Header = ({ onSearch }) => {
             className="logo"
           />
         </div>
-        <div className="search_box">
-          <span>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </span>
-          <input
-            type="search"
-            placeholder="Buscar..."
-            value={searchTerm}
-            onChange={handleInputChange}
-          />
-        </div>
+        <CourseSearcher onSearch={onSearch} />
         <ol>
           <li>
             <a href="#">Iniciar Sesión</a>
@@ -45,7 +30,7 @@ export const Header = ({ onSearch }) => {
           </li>
         </ol>
         <label htmlFor="check" className="bar">
-          <span>
+        <span>
             <FontAwesomeIcon icon={faBars} id="bars" />
           </span>
           <span>
@@ -56,4 +41,4 @@ export const Header = ({ onSearch }) => {
       <section className="section__header"></section>
     </header>
   );
-};
+}
