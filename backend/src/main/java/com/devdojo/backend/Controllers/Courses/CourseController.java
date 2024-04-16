@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping ("/api/courses")
+@CrossOrigin(origins = "http://localhost:5173")
 public class CourseController {
     private CourseSearchService courseSearch;
     private CourseRepository courseRepository;
@@ -23,16 +24,21 @@ public class CourseController {
         this.courseRepository = courseRepository;
     }
 
-   @GetMapping
+  /* @GetMapping("/search")
     public CourseSearchResponse searchCourse(@RequestParam(name = "q", required = false) String query){
         var courseResults = courseSearch.searchCourses(query)
                 .stream()
                 .map(this::responseFromCourse)
                 .collect(Collectors.toList());
         return new CourseSearchResponse(courseResults);
-    }
+    }*/
+  @GetMapping("/search")
+  public List<Course> searchCourses(@RequestParam String searchTerm) {
+      return courseSearch.searchCourses(searchTerm);
+  }
 
-    @GetMapping("/all")
+
+    @GetMapping
     public List<CourseResponse> getAllCourses() {
         return courseRepository.findAll().stream()
                 .map(this::responseFromCourse)

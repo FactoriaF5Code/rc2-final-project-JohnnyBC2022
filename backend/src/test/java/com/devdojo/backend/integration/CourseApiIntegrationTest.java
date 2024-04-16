@@ -37,7 +37,7 @@ public class CourseApiIntegrationTest {
                 new Course("url3", "Curso 3", "Descripción del curso 3", 30.0)
         ));
 
-        mockMvc.perform(get("/api/courses/all"))
+        mockMvc.perform(get("/api/courses"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$.length()").value(3))
