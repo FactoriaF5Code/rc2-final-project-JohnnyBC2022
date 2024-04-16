@@ -1,7 +1,8 @@
 .card_container {
   background-color: var(--orange);
   min-width: 36rem;
-  height: 30rem;
+  min-height: 40rem;
+  height: auto;
   text-align: center;
   border-radius: 1rem;
   border: solid 0.3rem var(--darkblue);
@@ -9,6 +10,9 @@
   position: relative;
   opacity: 1;
   flex: 0 1 calc(20% - 1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card_container img {
@@ -32,13 +36,15 @@
 }
 
 .card_container button {
-  margin: 2rem;
+  margin: 2rem auto;
   padding: 0.75rem;
   border-radius: 1rem;
   border: solid 0.3rem var(--darkblue);
   background: linear-gradient(180deg, var(--btnpinktop) 0%, var(--btnpink) 50%);
   color: var(--white);
+  text-transform: uppercase;
   transition: 0.3s ease-in-out;
+  width: 70%;
 }
 
 .card_container button:hover {

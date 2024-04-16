@@ -5,6 +5,7 @@ footer{
     display: flex;
     justify-content: space-evenly;
     padding: 2rem;
+    margin-top: auto;
 }
 
 .footer_icons{

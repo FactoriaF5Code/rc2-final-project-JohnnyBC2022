@@ -1,4 +1,5 @@
 import "./Header.css";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
@@ -6,7 +7,13 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const Header = () => {
+export const Header = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+    onSearch(event.target.value);
+  };
   return (
     <header>
       <input type="checkbox" id="check" />
@@ -22,7 +29,12 @@ export const Header = () => {
           <span>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </span>
-          <input type="search" placeholder="Buscar..." />
+          <input
+            type="search"
+            placeholder="Buscar..."
+            value={searchTerm}
+            onChange={handleInputChange}
+          />
         </div>
         <ol>
           <li>

@@ -1,3 +1,9 @@
+.homepage_main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 .cards_container {
   padding: 4rem;
   display: flex;
@@ -22,6 +28,4 @@
   opacity: 0.2;
 }
 
-.homepage_main{
-    position: relative;
-}
+
