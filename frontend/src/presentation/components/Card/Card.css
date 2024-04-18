@@ -43,6 +43,7 @@
   background: linear-gradient(180deg, var(--btnpinktop) 0%, var(--btnpink) 50%);
   color: var(--white);
   text-transform: uppercase;
+  cursor: pointer;
   transition: 0.3s ease-in-out;
   width: 70%;
 }

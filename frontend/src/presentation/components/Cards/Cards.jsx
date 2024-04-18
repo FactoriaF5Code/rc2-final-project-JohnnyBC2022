@@ -37,8 +37,6 @@ export const Cards = ({ searchTerm, onSearch }) => {
     setFilteredCourses(filtered);
   }, [searchTerm, courses]);
 
-  
-
   if (loading) {
     return <div>Cargando...</div>;
   }
