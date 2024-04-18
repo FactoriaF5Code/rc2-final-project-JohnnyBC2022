@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/courses")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://devdojo-nu.vercel.app/"})
 public class CourseController {
     private CourseSearchService courseSearch;
     private CourseRepository courseRepository;
@@ -24,17 +24,7 @@ public class CourseController {
         this.courseRepository = courseRepository;
     }
 
-    /*
-     * @GetMapping("/search")
-     * public CourseSearchResponse searchCourse(@RequestParam(name = "q", required =
-     * false) String query){
-     * var courseResults = courseSearch.searchCourses(query)
-     * .stream()
-     * .map(this::responseFromCourse)
-     * .collect(Collectors.toList());
-     * return new CourseSearchResponse(courseResults);
-     * }
-     */
+
     @GetMapping("/search")
     public List<Course> searchCourses(@RequestParam String searchTerm) {
         return courseSearch.searchCourses(searchTerm);
