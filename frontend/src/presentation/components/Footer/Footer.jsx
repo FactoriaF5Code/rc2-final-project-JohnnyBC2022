@@ -9,7 +9,10 @@ export const Footer = () => {
       <p>&copy; 2024</p>
       <ul className="footer_icons">
         <li>
-          <a href="https://www.linkedin.com/in/jonathan-baraga%C3%B1o-car%C3%BAs/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/jonathan-baraga%C3%B1o-car%C3%BAs/"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </li>

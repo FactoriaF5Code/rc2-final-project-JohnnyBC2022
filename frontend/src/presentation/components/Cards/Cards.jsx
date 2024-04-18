@@ -1,7 +1,7 @@
 import { Card } from "../Card/Card";
 import "./Cards.css";
 import { useState, useEffect } from "react";
-import { getCourses } from "../../../services/courseService"
+import { getCourses } from "../../../services/courseService";
 
 export const Cards = ({ searchTerm, onSearch }) => {
   const [courses, setCourses] = useState([]);

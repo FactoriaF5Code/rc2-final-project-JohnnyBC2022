@@ -1,12 +1,9 @@
 import React from "react";
 
-import {CourseSearcher} from "../Searcher/CourseSearcher"
+import { CourseSearcher } from "../Searcher/CourseSearcher";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = ({ onSearch }) => {
   return (
@@ -30,7 +27,7 @@ export const Header = ({ onSearch }) => {
           </li>
         </ol>
         <label htmlFor="check" className="bar">
-        <span>
+          <span>
             <FontAwesomeIcon icon={faBars} id="bars" />
           </span>
           <span>
@@ -41,4 +38,4 @@ export const Header = ({ onSearch }) => {
       <section className="section__header"></section>
     </header>
   );
-}
+};

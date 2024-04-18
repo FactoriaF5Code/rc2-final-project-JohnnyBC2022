@@ -1,19 +1,18 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   list-style: none;
   text-decoration: none;
   outline: none;
-  font-family: var(--mainfont)
+  font-family: var(--mainfont);
 }
 
 html {
-font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-
-:root{
+:root {
   --darkblue: #010326;
   --blue: #03588c;
   --lightblue: #04b2d9;

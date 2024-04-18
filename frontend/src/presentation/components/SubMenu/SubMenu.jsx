@@ -4,7 +4,7 @@ export const SubMenu = () => {
   return (
     <section className="submenu">
       <h1>
-        Adéntrate en el mundo  <span>DevDojo</span>
+        Adéntrate en el mundo <span>DevDojo</span>
         <span>DevDojo</span>
       </h1>
       <h2>
