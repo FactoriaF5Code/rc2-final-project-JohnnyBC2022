@@ -12,31 +12,33 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping ("/api/courses")
+@RequestMapping("/api/courses")
 @CrossOrigin(origins = "http://localhost:5173")
 public class CourseController {
     private CourseSearchService courseSearch;
     private CourseRepository courseRepository;
 
     public CourseController(@Autowired CourseSearchService courseSearchService,
-                            @Autowired CourseRepository courseRepository) {
+            @Autowired CourseRepository courseRepository) {
         this.courseSearch = courseSearchService;
         this.courseRepository = courseRepository;
     }
 
-  /* @GetMapping("/search")
-    public CourseSearchResponse searchCourse(@RequestParam(name = "q", required = false) String query){
-        var courseResults = courseSearch.searchCourses(query)
-                .stream()
-                .map(this::responseFromCourse)
-                .collect(Collectors.toList());
-        return new CourseSearchResponse(courseResults);
-    }*/
-  @GetMapping("/search")
-  public List<Course> searchCourses(@RequestParam String searchTerm) {
-      return courseSearch.searchCourses(searchTerm);
-  }
-
+    /*
+     * @GetMapping("/search")
+     * public CourseSearchResponse searchCourse(@RequestParam(name = "q", required =
+     * false) String query){
+     * var courseResults = courseSearch.searchCourses(query)
+     * .stream()
+     * .map(this::responseFromCourse)
+     * .collect(Collectors.toList());
+     * return new CourseSearchResponse(courseResults);
+     * }
+     */
+    @GetMapping("/search")
+    public List<Course> searchCourses(@RequestParam String searchTerm) {
+        return courseSearch.searchCourses(searchTerm);
+    }
 
     @GetMapping
     public List<CourseResponse> getAllCourses() {
@@ -46,14 +48,12 @@ public class CourseController {
     }
 
     private CourseResponse responseFromCourse(Course course) {
-       return new CourseResponse(
-               course.getCourseId().toString(),
-               course.getImageUrl(),
-               course.getCourseName(),
-               course.getDescription(),
-               course.getPrice()
-       );
-
+        return new CourseResponse(
+                course.getCourseId().toString(),
+                course.getImageUrl(),
+                course.getCourseName(),
+                course.getDescription(),
+                course.getPrice());
 
     }
 

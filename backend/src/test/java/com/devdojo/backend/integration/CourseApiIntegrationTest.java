@@ -29,13 +29,13 @@ public class CourseApiIntegrationTest {
     void setup() {
         courseRepository.deleteAll();
     }
+
     @Test
     void GetAllCoursesTest() throws Exception {
         courseRepository.saveAll(List.of(
                 new Course("url1", "Curso 1", "Descripción del curso 1", 10.0),
                 new Course("url2", "Curso 2", "Descripción del curso 2", 20.0),
-                new Course("url3", "Curso 3", "Descripción del curso 3", 30.0)
-        ));
+                new Course("url3", "Curso 3", "Descripción del curso 3", 30.0)));
 
         mockMvc.perform(get("/api/courses"))
                 .andExpect(status().isOk())
