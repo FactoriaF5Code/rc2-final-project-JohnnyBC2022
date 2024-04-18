@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  font-family: var(--mainfont);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --darkblue: #010326;
+  --blue: #03588c;
+  --lightblue: #04b2d9;
+  --green: #09a603;
+  --orange: #f2a663;
+  --red: #a62b0f;
+  --btnpink: #ba0e5b;
+  --btnpinktop: #ff3d67;
+  --white: #e9ecf2;
+  --mainfont: Roboto, system-ui, sans-serif;
+  --titlefont: Roboto-Condensed, system-ui, sans-serif;
+}
